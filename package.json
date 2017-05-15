@@ -59,7 +59,7 @@
   },
   "nyc": {
     "reporter": [
-      "html"
+      "html","cobertura"
     ],
     "include": [
       "src/**/*.js"
