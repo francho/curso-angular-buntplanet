@@ -1,0 +1,13 @@
+<md-toolbar>
+  <h1 class="md-toolbar-tools">
+    <span flex>Curso Angular 1.5+</span>
+  </h1>
+
+  <md-tabs class="md-primary md-hue-2" md-selected="$ctrl.selectedMenuOptionIndex" md-no-ink md-no-ink-bar>
+    <md-tab id="app.dashboard"
+            ng-repeat="menuOption in $ctrl.menuOptions track by $index"
+            ui-sref="{{menuOption.state}}"
+            label="{{menuOption.name}}"></md-tab>
+  </md-tabs>
+</md-toolbar>
+<div ui-view></div>

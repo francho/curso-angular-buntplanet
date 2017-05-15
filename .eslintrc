@@ -1,0 +1,21 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "immed": 0,
+    "noarg": 0,
+    "sub": 0,
+    "undef": 0,
+    "boss": 0,
+    "unused": 0,
+    "strict": 2,
+    "bitwise": 0,
+    "trailing": 0,
+    "regexp": 0,
+    "forin": 0,
+    "eqeqeq": 2
+  }
+}
