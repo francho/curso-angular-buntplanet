@@ -1,5 +1,5 @@
 import angular from 'angular';
-import logger from './logger-null';
+import logger from './logger-console-only';
 
 const loggingModule = angular
     .module('logging', [])
