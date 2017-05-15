@@ -28,3 +28,4 @@ jspm_packages
 *.iml
 yarn.lock
 coverage
+test_results.xml

@@ -8,6 +8,7 @@
     "dev": "webpack-dev-server -d -w --inline --content-base src/main/",
     "lint": "eslint src/main/*.js",
     "test": "mocha --require src/test/utils/mochaHelper.js --compilers js:babel-register --colors $(find src -name '*Test.js')",
+    "test:report": "mocha -R xunit --reporter-options output=test_results.xml --require src/test/utils/mochaHelper.js --compilers js:babel-register --colors $(find src -name '*Test.js')",
     "coverage": "nyc npm test"
   },
   "dependencies": {
@@ -25,7 +26,6 @@
     "rollbar-browser": "^1.9.4"
   },
   "devDependencies": {
-    "babel": "^6.5.2",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
     "babel-eslint": "^7.1.0",
@@ -59,7 +59,7 @@
   },
   "nyc": {
     "reporter": [
-      "html","cobertura"
+      "cobertura"
     ],
     "include": [
       "src/**/*.js"
