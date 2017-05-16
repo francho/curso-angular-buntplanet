@@ -2,7 +2,7 @@ export default class HeaderController {
   constructor($state) {
     this.menuOptions = [
       {state: 'curso.comics.listado', name: 'Listado de Comics'},
-      {state: 'curso.stringcalculator', name: 'String Calculator'}
+      {state: 'curso.string-calculator', name: 'String Calculator'}
     ];
 
     this.selectedMenuOptionIndex = this.menuOptions

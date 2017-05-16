@@ -4,6 +4,8 @@ import material from "angular-material";
 import {doAction, doQuery, navigateTo} from "./utils";
 import loggingModule from "./logging/logging-module";
 import headerModule from "./header/header-module";
+import comicsModule from "./comics/comics-module";
+import stringCalculatorModule from "./string-calculator/string-calculator-module";
 
 angular
     .module('curso', [
@@ -11,6 +13,8 @@ angular
       material,
       loggingModule,
       headerModule,
+      comicsModule,
+      stringCalculatorModule
     ])
     .factory('doAction', ['$http', doAction])
     .factory('doQuery', ['$http', doQuery])
@@ -28,7 +32,7 @@ angular
         <div ui-view></div>
       `
     })])
-    .config(['$urlRouterProvider', $urlRouterProvider => $urlRouterProvider.otherwise('/listado')]);
+    .config(['$urlRouterProvider', $urlRouterProvider => $urlRouterProvider.otherwise('/comics/listado')]);
 
 document.addEventListener('DOMContentLoaded', () => angular.bootstrap(document, ['curso']));
 
