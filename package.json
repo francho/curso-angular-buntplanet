@@ -20,9 +20,7 @@
     "angular-aria": "<1.6.0",
     "angular-material": "^1.1.1",
     "angular-ui-router": "^1.0.0-alpha.5",
-    "jjv": "^1.0.2",
-    "moment": "^2.18.1",
-    "rollbar-browser": "^1.9.4"
+    "jjv": "^1.0.2"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
@@ -48,6 +46,7 @@
     "q": "^1.4.1",
     "requestretry": "^1.12.0",
     "rimraf": "^2.5.4",
+    "rollbar": "^2.0.0",
     "rollbar-sourcemap-webpack-plugin": "^2.0.1",
     "sass-loader": "^4.0.2",
     "should": "^11.1.2",
@@ -55,8 +54,7 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.3",
-    "webpack-dev-server": "^1.16.2",
-    "yargs": "^6.3.0"
+    "webpack-dev-server": "^1.16.2"
   },
   "nyc": {
     "reporter": [
