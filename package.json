@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "server": "json-server --watch data/db.json",
     "clean": "rimraf build",
     "build": "yarn run clean && webpack",
     "serve:dev": "webpack-dev-server -d -w --inline --content-base src/main/",
@@ -39,6 +40,7 @@
     "http-server": "^0.10.0",
     "istanbul": "^0.4.5",
     "json-loader": "^0.5.4",
+    "json-server": "^0.10.1",
     "mocha": "^3.1.2",
     "node-sass": "^3.12.2",
     "nyc": "^6.1.1",
