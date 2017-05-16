@@ -1,9 +1,7 @@
 def yarn = { -> "${tool 'yarn'}/bin/yarn" }
 
 pipeline {
-  agent {
-    label 'slave3'
-  }
+  agent any
   stages {
     stage("Dependencies") {
       steps {
