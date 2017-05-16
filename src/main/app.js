@@ -7,6 +7,11 @@ import headerModule from "./header/header-module";
 import comicsModule from "./comics/comics-module";
 import stringCalculatorModule from "./string-calculator/string-calculator-module";
 
+
+const simpleToast = $mdToast => text => {
+  return $mdToast.show($mdToast.simple().textContent(text));
+};
+
 angular
     .module('curso', [
       uiRouter,
@@ -19,6 +24,7 @@ angular
     .factory('doAction', ['$http', doAction])
     .factory('doQuery', ['$http', doQuery])
     .factory('navigateTo', ['$state', navigateTo])
+    .factory('simpleToast', ['$mdToast', simpleToast])
 
     .config(['$mdInkRippleProvider', $mdInkRippleProvider => $mdInkRippleProvider.disableInkRipple()])
     .config(['$mdThemingProvider', $mdThemingProvider => $mdThemingProvider.theme('default').primaryPalette('blue').accentPalette('blue')])

@@ -1,7 +1,7 @@
 export default class Action {
-  constructor(url, name, payload) {
+  constructor(url, method, payload) {
     this.url = url;
-    this.name = name;
+    this.method = method;
     this.payload = payload;
   }
 
@@ -9,10 +9,18 @@ export default class Action {
     return new Action();
   }
 
+  static update(url, payload) {
+    return new Action(url, 'put', payload);
+  }
+
+  static delete(url) {
+    return new Action(url, 'delete');
+  }
+
   equals(other) {
     return other instanceof Action
         && this.url === other.url
-        && this.name === other.name
+        && this.method === other.method
         && JSON.stringify(this.payload) === JSON.stringify(other.payload);
   }
 }

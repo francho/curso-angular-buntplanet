@@ -3,6 +3,9 @@
 import Should from 'should';
 global.Should = Should;
 
+import sinon from 'sinon';
+global.sinon = sinon;
+
 import ActionSpy from './action-spy';
 global.ActionSpy = ActionSpy;
 

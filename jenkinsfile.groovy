@@ -47,6 +47,14 @@ pipeline {
                     maxNumberOfBuilds  : 0,
                     zoomCoverageChart  : false
               ])
+              publishHTML([allowMissing         : false,
+                           alwaysLinkToLastBuild: true,
+                           keepAll              : true,
+                           reportDir            : 'coverage',
+                           reportFiles          : 'index.html',
+                           reportName           : 'Resultados nyc/istanbul',
+                           reportTitles         : ''
+              ])
             }
       }
     }

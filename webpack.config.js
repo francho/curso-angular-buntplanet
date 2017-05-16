@@ -50,11 +50,11 @@ module.exports = {
     //   },
     //   minimize: true
     // })
-    new RollbarSourceMapPlugin({
-      accessToken: '422c62b0091c4a81894a804fbaccba1b',
-      version: versionTracking,
-      publicPath: "http://localhost:8080"
-    }),
+    // new RollbarSourceMapPlugin({
+    //   accessToken: '422c62b0091c4a81894a804fbaccba1b',
+    //   version: versionTracking,
+    //   publicPath: "http://localhost:8080"
+    // }),
     new webpack.DefinePlugin({
       __VERSION_TRACKING__: JSON.stringify(versionTracking)
     }),

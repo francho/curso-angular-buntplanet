@@ -1,0 +1,11 @@
+md-grid-tile {
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+md-grid-tile md-grid-tile-footer {
+  background: rgba(255, 255, 255, 0.80) !important;
+  color: #333 !important;
+  height: 50px !important;
+}
