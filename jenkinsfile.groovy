@@ -52,7 +52,7 @@ pipeline {
                            keepAll              : true,
                            reportDir            : 'coverage',
                            reportFiles          : 'index.html',
-                           reportName           : 'Resultados nyc/istanbul',
+                           reportName           : 'Resultados nyc',
                            reportTitles         : ''
               ])
             }
