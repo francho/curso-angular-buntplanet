@@ -1,7 +1,8 @@
 export default class HeaderController {
   constructor($state) {
     this.menuOptions = [
-      { state: 'app.listado', name: 'Listado' }
+      {state: 'curso.comics.listado', name: 'Listado de Comics'},
+      {state: 'curso.stringcalculator', name: 'String Calculator'}
     ];
 
     this.selectedMenuOptionIndex = this.menuOptions
@@ -11,3 +12,4 @@ export default class HeaderController {
 }
 
 HeaderController.$inject = ['$state'];
+

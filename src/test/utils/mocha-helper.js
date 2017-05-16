@@ -3,8 +3,8 @@
 import Should from 'should';
 global.Should = Should;
 
-import ActionSpy from './ActionSpy';
+import ActionSpy from './action-spy';
 global.ActionSpy = ActionSpy;
 
-import QuerySpy from './QuerySpy';
+import QuerySpy from './query-spy';
 global.QuerySpy = QuerySpy;

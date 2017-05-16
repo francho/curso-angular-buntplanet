@@ -1,6 +1,6 @@
 import Q from "q";
-import Query from '../../main/horizontal/Query'
-import FakePromise from './FakePromise';
+import Query from '../../main/horizontal/query'
+import FakePromise from './fake-promise';
 
 const encodeQuery = (query) => JSON.stringify(query);
 

@@ -1,6 +1,6 @@
 import assert from 'assert';
 import sinon from 'sinon';
-import Query from './Query';
+import Query from './query';
 
 describe('Query', function () {
   it('diferencia entre dos queries diferentes', function() {

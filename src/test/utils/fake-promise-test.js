@@ -1,4 +1,4 @@
-import FakePromise from './FakePromise';
+import FakePromise from './fake-promise';
 
 describe('Las falsas promesas síncronas', function () {
   it("permiten obtener el valor que contienen", function () {

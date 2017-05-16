@@ -1,5 +1,5 @@
 import assert from 'assert';
-import Action from './Action';
+import Action from './action';
 
 describe('Action', function () {
   it('diferencia entre dos acciones diferentes', function() {

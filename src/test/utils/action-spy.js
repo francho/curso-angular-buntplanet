@@ -1,6 +1,6 @@
 import Q from "q";
-import Action from '../../main/horizontal/Action'
-import FakePromise from "./FakePromise";
+import Action from '../../main/horizontal/action'
+import FakePromise from "./fake-promise";
 
 class ActionSpy {
   constructor(promisesAdapter, doneCallback) {
