@@ -26,10 +26,12 @@ angular
     .factory('navigateTo', ['$state', navigateTo])
     .factory('simpleToast', ['$mdToast', simpleToast])
 
+    // Específicas de angular-material-design
     .config(['$mdInkRippleProvider', $mdInkRippleProvider => $mdInkRippleProvider.disableInkRipple()])
     .config(['$mdThemingProvider', $mdThemingProvider => $mdThemingProvider.theme('default').primaryPalette('blue').accentPalette('blue')])
     .config(['$mdAriaProvider', $mdAriaProvider => $mdAriaProvider.disableWarnings()])
 
+    // Ruta por defecto
     .config(['$stateProvider', $stateProvider => $stateProvider.state('curso', {
       url: '',
       abstract: true,
@@ -40,5 +42,7 @@ angular
     })])
     .config(['$urlRouterProvider', $urlRouterProvider => $urlRouterProvider.otherwise('/comics/listado')]);
 
+
+// Arrancan la app programaticamente en vez de hacer un ng-app
 document.addEventListener('DOMContentLoaded', () => angular.bootstrap(document, ['curso']));
 
