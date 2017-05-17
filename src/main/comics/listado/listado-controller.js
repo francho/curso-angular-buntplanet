@@ -4,6 +4,10 @@ export default class ListadoController {
     this.navigateTo = navigateTo;
   }
 
+  goToDetail(comic) {
+    this.navigateTo('curso.comics.detalle',comic);
+  }
+
   $onInit() {
     this.$http.get('http://localhost:3000/comics').then(comics => {
       this.comics = comics.data;

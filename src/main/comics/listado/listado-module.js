@@ -1,16 +1,16 @@
 import angular from "angular";
 import uiRouter from "angular-ui-router";
 import material from "angular-material";
-import ListadoController from "./listado-controller";
+import ListadoComponent from "./listado-component";
 
 export default angular
-    .module('curso.comics.listado', [uiRouter, material])
+  .module('curso.comics.listado', [uiRouter, material])
 
-    .config(['$stateProvider', $stateProvider => $stateProvider.state('curso.comics.listado', {
-      url: '/listado',
-      templateUrl: './comics/listado/listado.html',
-      controller: ListadoController,
-      controllerAs: '$ctrl'
-    })])
+  .component('listadoComics', ListadoComponent)
 
-    .name;
+  .config(['$stateProvider', $stateProvider => $stateProvider.state('curso.comics.listado', {
+    url: '/listado',
+    component: 'listadoComics'
+  })])
+
+  .name;
