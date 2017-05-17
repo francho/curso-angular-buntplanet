@@ -1,6 +1,7 @@
 export default class ListadoController {
-  constructor($http) {
+  constructor($http, navigateTo) {
     this.$http = $http;
+    this.navigateTo = navigateTo;
   }
 
   $onInit() {
@@ -10,4 +11,4 @@ export default class ListadoController {
   }
 }
 
-ListadoController.$inject = ['$http'];
+ListadoController.$inject = ['$http', 'navigateTo'];

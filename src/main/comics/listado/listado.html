@@ -2,9 +2,6 @@
 
 <md-card ng-repeat="comic in $ctrl.comics">
   <md-card-header>
-    <md-card-header-text class="md-title" ng-bind="comic.title"></md-card-header-text>
+    <md-card-header-text class="md-title" ng-bind="comic.title" ng-click="$ctrl.goToDetail(comic)"></md-card-header-text>
   </md-card-header>
-  <md-card-content>
-    <p ng-bind="comic.description"></p>
-  </md-card-content>
 </md-card>
