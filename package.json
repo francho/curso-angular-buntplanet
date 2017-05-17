@@ -7,7 +7,7 @@
     "server": "json-server --watch data/db.json",
     "clean": "rimraf build",
     "build": "yarn run clean && webpack",
-    "serve:dev": "webpack-dev-server -d -w --inline --content-base src/main/",
+    "serve:dev": "webpack-dev-server --port 7070 -d -w --inline --content-base src/main/",
     "serve:build": "http-server build -o",
     "lint": "eslint src/main/**/*.js",
     "test": "mocha --require src/test/utils/mocha-helper.js --compilers js:babel-register --colors src/**/*-test.js",
