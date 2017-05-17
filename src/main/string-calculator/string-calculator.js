@@ -1,17 +1,17 @@
 
-export default texto => {
-  let result = 0;
+const sum = (a,b) => a + b;
 
+
+export default texto => {
   if(texto==='') {
-    return result;
+    return 0;
   }
 
   texto=texto.replace(new RegExp("\n", 'g'),',');
-  const numbers = texto.split(',');
 
-  for(let number of numbers) {
-    result += parseInt(number)
-  }
+  return texto
+    .split(',')
+    .map(n => parseInt(n, 10))
+    .reduce(sum);
 
-  return result;
 }
