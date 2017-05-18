@@ -1,4 +1,3 @@
-import Query from "../../horizontal/query";
 import DetalleController from "./detalle-controller";
 import {buildComic, noOp} from "../comics-test-utils";
 

@@ -1,4 +1,3 @@
-import Query from "../../horizontal/query";
 import ListadoController from "./listado-controller";
 import {buildComic, noOp} from "../comics-test-utils";
 
