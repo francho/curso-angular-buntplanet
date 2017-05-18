@@ -8,5 +8,9 @@ export default {
         { operation: '1,4,6', result: 11}
       ];
     }
+
+    addEntryLog(operation,result) {
+      this.logEntries.push({operation: operation, result: result});
+    }
   }
 }

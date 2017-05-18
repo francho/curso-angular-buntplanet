@@ -1,4 +1,4 @@
 <div layout="row">
   <log-panel log-entries="$ctrl.logEntries"></log-panel>
-  <calculator-panel></calculator-panel>
+  <calculator-panel on-calculate="$ctrl.addEntryLog(operation, result)"></calculator-panel>
 </div>
