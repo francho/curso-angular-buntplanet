@@ -1,0 +1,24 @@
+<md-card class="comic-detalle">
+  <md-card-header style="background: url({{$ctrl.getComic().images[0]}})">
+  </md-card-header>
+
+
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-title">{{$ctrl.getComic().title}}</span>
+      <span class="md-subhead">Paginas: {{$ctrl.getComic().pageCount}}</span>
+    </md-card-title-text>
+  </md-card-title>
+
+  <md-card-content>
+    <p ng-hide="$ctrl.isEditing()">{{$ctrl.getComic().description}}</p>
+    <textarea ng-show="$ctrl.isEditing()" ng-model="$ctrl.getComic().description"></textarea>
+  </md-card-content>
+
+  <md-card-actions layout="row" layout-align="start center">
+    <md-button ng-disabled="$ctrl.isEditing()" ng-click="$ctrl.edit()">Editar</md-button>
+    <md-button ng-disabled="$ctrl.isNotEditing()" ng-click="$ctrl.save()">Guardar</md-button>
+    <md-button class="md-warn" ng-click="$ctrl.delete()">Borrar</md-button>
+  </md-card-actions>
+
+</md-card>
