@@ -1,0 +1,19 @@
+<md-card>
+  <md-card-header>
+    <md-card-title>
+      <md-card-title-text>
+        Calculate
+      </md-card-title-text>
+    </md-card-title>
+  </md-card-header>
+
+
+  <md-card-content ng-bind="$ctrl.result">
+
+  </md-card-content>
+
+  <md-card-actions layout="row" layout-align="start center">
+    <input type="text" ng-model="$ctrl.operation">
+    <button ng-click="$ctrl.calculate()">calculate</button>
+  </md-card-actions>
+</md-card>
