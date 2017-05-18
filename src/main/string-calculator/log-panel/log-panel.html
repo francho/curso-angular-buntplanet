@@ -8,7 +8,12 @@
   </md-card-header>
 
 
-  <md-card-content ng-bind="$ctrl.log">
+  <md-card-content>
+    <ul>
+      <li ng-repeat="logEntry in $ctrl.logEntries">
+        {{logEntry.operation}} = <strong>{{logEntry.result}}</strong>
+      </li>
+    </ul>
 
   </md-card-content>
 
