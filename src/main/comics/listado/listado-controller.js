@@ -3,16 +3,15 @@ import validator from "../../horizontal/validator";
 import comicsSchema from "../comics-schema";
 
 export default class ListadoController {
-  constructor(doQuery, navigateTo) {
+  constructor(doQuery, navigateTo, $stateParams) {
     this.doQuery = doQuery;
     this.navigateTo = navigateTo;
     this.comics = [];
+    this.initPage = $stateParams.page || 1;
   }
 
   $onInit() {
-    this.doQuery(new Query("/comics", {_page: 1, _limit: 24}, null))
-        .then(validator(comicsSchema))
-        .then(json => this.comics = json);
+    this.loadPage(this.initPage);
   }
 
   getComics() {
@@ -22,6 +21,12 @@ export default class ListadoController {
   goToDetail(comic) {
     this.navigateTo('curso.comics.detalle', {id: comic.id});
   }
+
+  loadPage(page) {
+    this.doQuery(new Query("/comics", {_page: page, _limit: 24}, null))
+        .then(validator(comicsSchema))
+        .then(json => this.comics = json);
+  }
 }
 
-ListadoController.$inject = ['doQuery', 'navigateTo'];
+ListadoController.$inject = ['doQuery', 'navigateTo', '$stateParams'];

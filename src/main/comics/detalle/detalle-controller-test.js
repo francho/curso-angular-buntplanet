@@ -7,7 +7,7 @@ describe("El controlador del componente de Detalle de un comic", () => {
     const comicStub = buildComic();
 
     const doQuerySpy = QuerySpy.sync();
-    doQuerySpy.addOutputStub(Query.withoutParams(`/comics/${comicStub.id}`), comicStub);
+    doQuerySpy.addOutputStub(`/comics/${comicStub.id}`, comicStub);
 
     const $ctrl = new DetalleController(doQuerySpy.getDoQuery(), noOp, noOp, noOp, {id: comicStub.id});
     $ctrl.$onInit();

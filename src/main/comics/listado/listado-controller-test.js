@@ -6,7 +6,7 @@ describe("El controlador del componente de Listado de comics", () => {
   it("inicializa su estado pidiendo la primera pagina de comics", () => {
     const comicsStub = [buildComic(), buildComic()];
     const doQuerySpy = QuerySpy.sync();
-    doQuerySpy.addOutputStub(new Query("/comics", {_page: 1, _limit: 24}, null), comicsStub);
+    doQuerySpy.addOutputStub("/comics", comicsStub);
     const $ctrl = new ListadoController(doQuerySpy.getDoQuery(), noOp);
     $ctrl.$onInit();
 
@@ -17,7 +17,7 @@ describe("El controlador del componente de Listado de comics", () => {
 
   it("valida el esquema de datos de la respuesta del servidor", () => {
     const doQuerySpy = QuerySpy.sync();
-    doQuerySpy.addOutputStub(new Query("/comics", {_page: 1, _limit: 24}, null), [{id: 1}]);
+    doQuerySpy.addOutputStub("/comics", [{id: 1}]);
     const $ctrl = new ListadoController(doQuerySpy.getDoQuery(), noOp);
     (() => $ctrl.$onInit()).should.throw(/description.*required.*true/)
   });

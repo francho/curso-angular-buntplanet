@@ -8,7 +8,7 @@
     </md-card-title>
 
     <md-card-content>
-
+      <pagination last-page="29" init-page="{{$ctrl.initPage}}" on-change="$ctrl.loadPage(page)"></pagination>
       <md-grid-list
           md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6"
           md-row-height-gt-md="1:1" md-row-height="2:2"
@@ -24,7 +24,6 @@
           <md-grid-tile-footer><h3>{{comic.title}}</h3></md-grid-tile-footer>
         </md-grid-tile>
       </md-grid-list>
-
     </md-card-content>
   </md-card>
 </md-content>

@@ -1,10 +1,11 @@
 import Q from "q";
-import Action from '../../main/horizontal/action'
+import Action from "../../main/horizontal/action";
 import FakePromise from "./fake-promise";
 
 class ActionSpy {
   constructor(promisesAdapter, doneCallback) {
     this.hasBeenCalled = false;
+    this.actions = [];
     this.lastAction = Action.empty();
     this.doneCallback = doneCallback;
     this.promise = promisesAdapter.resolved(this.output);
@@ -12,12 +13,14 @@ class ActionSpy {
 
   reset() {
     this.hasBeenCalled = false;
+    this.actions = [];
     this.lastAction = Action.empty();
   }
 
   getDoAction() {
-    return ((action) => {
+    return (action => {
       this.hasBeenCalled = true;
+      this.actions.push(action);
       this.lastAction = action;
       return this.promise;
     }).bind(this);
