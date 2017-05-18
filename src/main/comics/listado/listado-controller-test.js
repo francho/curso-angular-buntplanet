@@ -7,7 +7,7 @@ describe("El controlador del componente de Listado de comics", () => {
     const comicsStub = [buildComic(), buildComic()];
     const doQuerySpy = QuerySpy.sync();
     doQuerySpy.addOutputStub("/comics", comicsStub);
-    const $ctrl = new ListadoController(doQuerySpy.getDoQuery(), noOp);
+    const $ctrl = new ListadoController(doQuerySpy.getDoQuery(), noOp, {});
     $ctrl.$onInit();
 
     $ctrl.getComics().should.deepEqual(comicsStub);
@@ -18,14 +18,14 @@ describe("El controlador del componente de Listado de comics", () => {
   it("valida el esquema de datos de la respuesta del servidor", () => {
     const doQuerySpy = QuerySpy.sync();
     doQuerySpy.addOutputStub("/comics", [{id: 1}]);
-    const $ctrl = new ListadoController(doQuerySpy.getDoQuery(), noOp);
+    const $ctrl = new ListadoController(doQuerySpy.getDoQuery(), noOp, {});
     (() => $ctrl.$onInit()).should.throw(/description.*required.*true/)
   });
 
   it("navega al detalle de un comic", () => {
     const comic = buildComic();
     const navigateToSpy = sinon.spy();
-    const $ctrl = new ListadoController(null, navigateToSpy);
+    const $ctrl = new ListadoController(null, navigateToSpy, {});
     $ctrl.goToDetail(comic);
 
     navigateToSpy.firstCall.args.should.deepEqual([
