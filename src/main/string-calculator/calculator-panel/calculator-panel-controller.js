@@ -3,9 +3,9 @@ import stringCalculator from "../string-calculator"
 export default class CalculatorPanelController {
   constructor($rootScope) {
     this.operation = '';
-    $rootScope.$on('load-operation', (event, eventInfo) => {
-      this.operation = eventInfo.operation;
-      this.result = eventInfo.result;
+    $rootScope.$on('load-operation', (event, eventDetails) => {
+      this.operation = eventDetails.operation;
+      this.result = eventDetails.result;
     });
   }
 
@@ -15,7 +15,6 @@ export default class CalculatorPanelController {
   }
 
   $onInit() {
-    console.log('CalculatorPanelController.$onInit');
   }
 
 }
