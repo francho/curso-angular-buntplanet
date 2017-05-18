@@ -38,9 +38,9 @@ const getPage = page => {
   return defer.promise;
 };
 
-const writeDb = () => something => {
+const writeDb = () => data => {
   const defer = q.defer();
-  fs.writeFile("data/db.json", JSON.stringify(something, null, ' '), err => {
+  fs.writeFile("data/db.json", JSON.stringify(data, null, ' '), err => {
     if (err)
       defer.reject(err);
     else

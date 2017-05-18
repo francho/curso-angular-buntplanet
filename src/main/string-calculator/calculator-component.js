@@ -1,6 +1,6 @@
 import sc from "./string-calculator";
 
-class CalculatorController {
+export class CalculatorController {
   constructor($rootScope) {
     this.$rootScope = $rootScope;
     this.input = '';

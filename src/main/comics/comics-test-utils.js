@@ -5,5 +5,3 @@ export const buildComic = id => ({
   description: "cocotero"
 });
 
-export const noOp = () => {
-};

@@ -1,4 +1,4 @@
-class LogController {
+export class LogController {
   constructor($rootScope) {
     this.$rootScope = $rootScope;
   }

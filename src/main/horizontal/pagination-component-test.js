@@ -1,5 +1,5 @@
 import PaginationController from "./pagination-component-controller";
-import {noOp} from "../comics/comics-test-utils";
+import {noOp} from "../utils";
 
 describe("El controlador del componente de Paginación", () => {
   describe("Sabe cambiar de página", () => {

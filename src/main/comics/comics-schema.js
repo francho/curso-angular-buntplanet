@@ -1,17 +1,19 @@
-export default {
-  "type": "array",
-  "minItems": 0,
-  "items": {
-    type: 'object',
-    properties: {
-      id: {
-        type: 'number'
-      },
-      description: {
-        type: ['null', 'string']
-      }
+export const comicSchema = {
+  type: "object",
+  properties: {
+    id: {
+      type: "number"
     },
-    required: ['id', 'description']
+    description: {
+      type: ["null", "string"]
+    }
   },
-  "uniqueItems": true
+  required: ["id", "description"]
+};
+
+export default {
+  type: "array",
+  minItems: 0,
+  items: comicSchema,
+  uniqueItems: true
 };

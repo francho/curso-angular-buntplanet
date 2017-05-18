@@ -1,5 +1,6 @@
 import ListadoController from "./listado-controller";
-import {buildComic, noOp} from "../comics-test-utils";
+import {buildComic} from "../comics-test-utils";
+import {noOp} from '../../utils';
 
 describe("El controlador del componente de Listado de comics", () => {
   it("inicializa su estado pidiendo la primera pagina de comics", () => {

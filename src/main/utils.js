@@ -9,3 +9,5 @@ export const doQuery = ($http) => (data, mapper) => $http.get(`http://localhost:
 
 export const navigateTo = ($state) => (stateName, params) => $state.go(stateName, params);
 
+export const noOp = () => {
+};
