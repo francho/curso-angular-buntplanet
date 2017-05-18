@@ -12,5 +12,4 @@ export default angular
     component: 'detalleComponent'
   })])
 
-
   .name;

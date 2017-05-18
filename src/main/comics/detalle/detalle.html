@@ -1,10 +1,11 @@
-<h1 ng-bind="$ctrl.comic.title"></h1>
-
-<md-card >
+<md-card>
   <img src="{{$ctrl.comic.thumbnail}}" class="md-card-image" alt="{{$ctrl.comic.title}}">
+
   <md-card-header>
-    <md-card-content class="md-title" ng-bind-html="$ctrl.comic.descriptionTrustHtml"></md-card-content>
+    <md-card-header-text class="md-title" ng-bind="$ctrl.comic.title"></md-card-header-text>
   </md-card-header>
+
+  <md-card-content ng-bind-html="$ctrl.comic.descriptionTrustHtml"></md-card-content>
 
 </md-card>
 
