@@ -1,23 +1,6 @@
 import "should";
 import CalculatorPanelController from "./calculator-panel-controller"
-
-class dummyRootScope {
-  constructor() {
-    this.callbacks = [];
-  }
-
-  $on(event, callback) {
-    this.callbacks.push({event: event, callback: callback})
-  }
-
-  $broadcast(event, params) {
-    for (let listener of this.callbacks) {
-      if (listener.event === event) {
-        listener.callback(event, params);
-      }
-    }
-  }
-}
+import FakeRootScope from '../../../test/utils/fake-root-scope'
 
 describe('CalculatorPanelController', () => {
   it('calculate updates the result using string calculator', () => {
@@ -27,7 +10,7 @@ describe('CalculatorPanelController', () => {
     const stringCalculator = sinon.stub();
     stringCalculator.withArgs(dummyOperation).returns(expectedResult);
 
-    const emptyRootScope = new dummyRootScope();
+    const emptyRootScope = new FakeRootScope();
 
     const $ctrl = new CalculatorPanelController(emptyRootScope);
 
@@ -41,7 +24,7 @@ describe('CalculatorPanelController', () => {
 
   it('loads operation and result from event', () => {
     const expectedOperation = {operation: '5,6', result: '11'};
-    const fakeRootScope = new dummyRootScope();
+    const fakeRootScope = new FakeRootScope();
     const $ctrl = new CalculatorPanelController(fakeRootScope);
 
     fakeRootScope.$broadcast('load-operation', expectedOperation);
