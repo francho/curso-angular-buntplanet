@@ -65,7 +65,6 @@
       "src/**/*.js"
     ],
     "exclude": [
-      "src/**/*-test.js",
       "src/main/comics/comics-test-utils.js",
       "src/test/**/*.js"
     ],
