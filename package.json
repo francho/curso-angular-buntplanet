@@ -8,7 +8,7 @@
     "clean": "rimraf build",
     "build": "yarn run clean && webpack",
     "serve:dev": "webpack-dev-server --port 7070 -d -w --inline --content-base src/main/",
-    "serve:build": "http-server build -o",
+    "serve:build": "http-server build -p 7071 -o",
     "lint": "eslint src/main/**/*.js",
     "test": "mocha --require src/test/utils/mocha-helper.js --compilers js:babel-register --colors src/**/*-test.js",
     "test:report": "mocha -R xunit --reporter-options output=test_results.xml --require src/test/utils/mocha-helper.js --compilers js:babel-register --colors src/**/*-test.js",
