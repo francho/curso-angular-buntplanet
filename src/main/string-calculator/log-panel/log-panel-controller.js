@@ -1,10 +1,11 @@
 
 export default class LogPanelController {
-  constructor() {
-
+  constructor($rootScope) {
+    this.$rootScope = $rootScope;
   }
 
-  calculate() {
+  loadOperation(operation) {
+    this.$rootScope.$broadcast('load-operation', operation);
   }
 
   $onInit() {
@@ -12,4 +13,4 @@ export default class LogPanelController {
 
 }
 
-LogPanelController.$inject = [];
+LogPanelController.$inject = ['$rootScope'];

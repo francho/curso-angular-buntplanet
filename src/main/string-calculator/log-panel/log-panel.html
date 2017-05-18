@@ -10,7 +10,7 @@
 
   <md-card-content>
     <ul>
-      <li ng-repeat="logEntry in $ctrl.logEntries">
+      <li ng-repeat="logEntry in $ctrl.logEntries" ng-click="$ctrl.loadOperation(logEntry)">
         {{logEntry.operation}} = <strong>{{logEntry.result}}</strong>
       </li>
     </ul>

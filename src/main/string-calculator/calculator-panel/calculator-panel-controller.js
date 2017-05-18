@@ -1,8 +1,12 @@
 import stringCalculator from "../string-calculator"
 
 export default class CalculatorPanelController {
-  constructor() {
-    this.operation ='';
+  constructor($rootScope) {
+    this.operation = '';
+    $rootScope.$on('load-operation', (event, eventInfo) => {
+      this.operation = eventInfo.operation;
+      this.result = eventInfo.result;
+    });
   }
 
   calculate() {
@@ -16,4 +20,4 @@ export default class CalculatorPanelController {
 
 }
 
-CalculatorPanelController.$inject = [];
+CalculatorPanelController.$inject = ['$rootScope'];
