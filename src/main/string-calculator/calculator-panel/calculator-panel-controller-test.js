@@ -3,23 +3,39 @@ import CalculatorPanelController from "./calculator-panel-controller"
 import FakeRootScope from '../../../test/utils/fake-root-scope'
 
 describe('CalculatorPanelController', () => {
-  it('calculate updates the result using string calculator', () => {
-    const dummyOperation = '1,3';
-    const expectedResult = 4;
+  describe('calculate', () => {
 
-    const stringCalculator = sinon.stub();
-    stringCalculator.withArgs(dummyOperation).returns(expectedResult);
+    it('calculate updates the result using string calculator', () => {
+      const dummyOperation = '1,3';
+      const expectedResult = 4;
 
-    const emptyRootScope = new FakeRootScope();
+      const stringCalculator = sinon.stub();
+      stringCalculator.withArgs(dummyOperation).returns(expectedResult);
 
-    const $ctrl = new CalculatorPanelController(emptyRootScope);
+      const emptyRootScope = new FakeRootScope();
 
-    $ctrl.onCalculate = function() {
-    };
+      const $ctrl = new CalculatorPanelController(emptyRootScope);
 
-    $ctrl.operation = dummyOperation;
-    $ctrl.calculate();
-    $ctrl.result.should.equal(expectedResult);
+      $ctrl.onCalculate = () => {
+      };
+
+      $ctrl.operation = dummyOperation;
+      $ctrl.calculate();
+      $ctrl.result.should.equal(expectedResult);
+    });
+
+    it('calls callback after calculate', () => {
+      const $ctrl = new CalculatorPanelController(new FakeRootScope());
+      const callbackSpy=sinon.spy();
+
+      $ctrl.onCalculate = callbackSpy;
+
+      $ctrl.calculate();
+
+
+
+//       callbackSpy.firstCall.args.should.deepEqual({operation: $ctrl.operation, result: $ctrl.result});
+    });
   });
 
   it('loads operation and result from event', () => {
