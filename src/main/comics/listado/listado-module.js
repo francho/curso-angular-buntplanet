@@ -9,7 +9,7 @@ export default angular
     .component('listadoComics', listadoComponent)
 
     .config(['$stateProvider', $stateProvider => $stateProvider.state('curso.comics.listado', {
-      url: '/listado',
+      url: '/listado?page',
       component: 'listadoComics'
     })])
 
