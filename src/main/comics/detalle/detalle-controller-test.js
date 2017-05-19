@@ -1,5 +1,6 @@
 import DetalleController from "./detalle-controller";
-import {buildComic, noOp} from "../comics-test-utils";
+import {buildComic} from "../comics-test-utils";
+import {noOp} from '../../utils';
 
 describe("El controlador del componente de Detalle de un comic", () => {
   it("inicializa su estado pidiendo el comic a partir del id que recibe por params de url", () => {
