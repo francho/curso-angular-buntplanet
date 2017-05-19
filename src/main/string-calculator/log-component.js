@@ -16,13 +16,13 @@ export default {
     entries: '<'
   },
   template: `
-    <h2>Log de cálculos</h2>
-    <ul>
-      <li ng-repeat="entry in $ctrl.entries">
-        {{entry.input}} => {{entry.result}}
-        <button ng-click="$ctrl.load(entry)">Cargar</button>
-      </li>
-    </ul>
+    <h1 class="md-display-1">Resultados</h1>
+    <md-list>
+      <md-list-item ng-repeat="entry in $ctrl.entries">
+        <span>{{entry.input}} ==> {{entry.result}}</span>
+        <md-button ng-click="$ctrl.load(entry)" class="md-secondary">CARGAR</md-button>
+      </md-list-item>
+    </md-list>
   `,
   controller: LogController
 }

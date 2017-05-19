@@ -13,10 +13,25 @@ export class ContainerController {
 
 export default {
   template: `
-    <div layout="row">
-      <sc-log entries="$ctrl.entries" flex="50"></sc-log>
-      <sc-calculator on-compute="$ctrl.logEntry(input, result)" flex="50"></sc-calculator>
-    </div>
+    <md-content class="md-padding" ng-cloak>
+  <md-card>
+
+    <md-card-title>
+      <md-card-title-text>
+        <md-subheader>String calculator</md-subheader>
+      </md-card-title-text>
+    </md-card-title>
+
+    <md-card-content>
+      <div layout="row">
+        <sc-log layout="column" flex="50" entries="$ctrl.entries"></sc-log>
+        <sc-calculator layout="column" flex="50" on-compute="$ctrl.logEntry(input, result)"></sc-calculator>
+      </div>
+    </md-card-content>
+  </md-card>
+</md-content>
+
+
   `,
   controller: ContainerController
 }

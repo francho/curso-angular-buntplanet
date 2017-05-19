@@ -33,10 +33,16 @@ export default {
     onCompute: '&'
   },
   template: `
-    <h2>Calculadora</h2>
-    <span>{{$ctrl.result}}</span>
-    <input ng-model="$ctrl.input"/>
-    <button ng-click="$ctrl.compute()">Calcular</button>
+    <h1 class="md-display-1">Calculadora</h1>
+
+    <p layout="row" layout-align="center center" class="md-display-4">{{$ctrl.result}}</p>
+    
+    <md-input-container layout="row">
+      <label>Entrada de datos</label>
+      <input ng-model="$ctrl.input">
+    </md-input-container>
+    
+    <md-button layout="row" class="md-raised md-primary" ng-click="$ctrl.compute()">Calcular!</md-button>
   `,
   controller: CalculatorController
 }
